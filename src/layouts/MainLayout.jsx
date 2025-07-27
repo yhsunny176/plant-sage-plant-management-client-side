@@ -7,7 +7,7 @@ const MainLayout = () => {
     return (
         <>
             <header>
-                <nav>
+                <nav className="w-full bg-background-body h-20">
                     <Navbar />
                 </nav>
             </header>

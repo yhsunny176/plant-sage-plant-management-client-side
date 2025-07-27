@@ -1,8 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 body {
   margin: 0;
   padding: 0;
 }
 
+
+/* Main Colors to use */
+@theme inline {
+  --color-background-body: var(--bg-body);
+
+  /* Text Colors */
+  --color-heading-primary: var(--head-prim);
+  --color-black-pg-base: var(--pg-prim);
+  --color-black-pg-light: var(--pg-light);
+  --color-black-subtext-banner: var(--banner-sub);
+}
+
+
+
+
+
+
+
+/* Color Variable Initialization for Light & Dark */
+
+:root {
+  /* Colors */
+  --bg-body: oklch(0.9981 0.0053 117.92);
+
+  /* Text Colors */
+  --head-prim: oklch(0.3033 0.0629 159.41);
+  --pg-prim: oklch(0.1548 0.0065 156.36);
+  --pg-light: oklch(0.528 0.0048 157.08);
+  --banner-sub: oklch(0.4786 0.0049 157.06);
+}
+
+.dark {
+  /* Colors */
+  --bg-body: oklch(0.1669 0.0234 184.92);
+
+  /* Text Colors */
+  --pg-prim: oklch(0.9981 0.0053 117.92);
+  --pg-light: oklch(0.9981 0.0053 117.92);
+}

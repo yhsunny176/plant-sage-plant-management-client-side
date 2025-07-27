@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
-  return (
-    <div>
-      <h1>This is Navbar</h1>
-    </div>
-  );
+    return (
+        <div className="xl:max-w-6xl">
+            <div className="toggle-btn">
+                <ThemeToggle />
+            </div>
+        </div>
+    );
 };
 
 export default Navbar;
