@@ -12,7 +12,7 @@ const ThemeToggle = () => {
     };
     return (
         <button
-            className="cursor-pointer text-black-pg-base transition-colors duration-500 ease-in-out"
+            className="toggle-btn w-10 h-10 flex items-center justify-center rounded-full bg-toggle-background text-toggle-icon-color transition-colors duration-500 ease-in-out cursor-pointer"
             onClick={handleThemeChange}>
             {theme === "dark" && (
                 <h1>

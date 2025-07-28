@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 
 export const ThemeProviderContext = createContext({
-    theme: "system",
+    theme: "light",
     setTheme: () => null,
 });

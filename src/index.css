@@ -7,25 +7,40 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Inria", serif;
 }
-
 
 /* Main Colors to use */
 @theme inline {
   --color-background-body: var(--bg-body);
+
+  --color-toggle-background: var(--toggle-bg);
+  --color-toggle-icon-color: var(--toggle-icon);
+  --color-toggle-hover: var(--toggle-hov);
+
+
+  --color-btn-background-static: var(--btn-bg-static);
+  --color-btn-background-primary: var(--btn-primary);
+  --color-btn-text-static: var(--btn-txt-static);
+  --color-btn-text-primary: var(--btn-txt-prim);
+  --color-btn-hover-bg: var(--btn-hov);
+  --color-btn-hover-static: var(--btn-hov-static);
+  --color-btn-outline: var(--btn-out-prim);
 
   /* Text Colors */
   --color-heading-primary: var(--head-prim);
   --color-black-pg-base: var(--pg-prim);
   --color-black-pg-light: var(--pg-light);
   --color-black-subtext-banner: var(--banner-sub);
+  --color-white-base: var(--wht-base);
+
+
+  /* Shadows */
+  --shadow-btn-shadow-static: var(--btn-shad-static);
+  --shadow-btn-shadow-primary: var(--btn-shad);
+  --shadow-nav-menu: var(--shad-nav);
+
 }
-
-
-
-
-
-
 
 /* Color Variable Initialization for Light & Dark */
 
@@ -33,18 +48,52 @@ body {
   /* Colors */
   --bg-body: oklch(0.9981 0.0053 117.92);
 
+  --toggle-bg: oklch(0.5237 0.0994 169.03);
+  --toggle-hov: oklch(0.3033 0.0629 159.41);
+  --toggle-icon: oklch(0.9981 0.0053 117.92);
+
+  --btn-bg-static: oklch(0.5237 0.0994 169.03);
+  --btn-txt-static: oklch(0.9981 0.0053 117.92);
+  --btn-primary: oklch(0.5237 0.0994 169.03);
+  --btn-txt-prim: oklch(0.9981 0.0053 117.92);
+  --btn-hov: oklch(0.4992 0.0948 169.39);
+  --btn-hov-static: oklch(0.3033 0.0629 159.41);
+  --btn-out-prim: oklch(0.9981 0.0053 117.92); 
+
   /* Text Colors */
   --head-prim: oklch(0.3033 0.0629 159.41);
   --pg-prim: oklch(0.1548 0.0065 156.36);
   --pg-light: oklch(0.528 0.0048 157.08);
   --banner-sub: oklch(0.4786 0.0049 157.06);
+  --wht-base: oklch(0.9981 0.0053 117.92); 
+
+  /* shadows */
+  --btn-shad: 0 8px 20px 0 oklch(0.9028 0.0059 153.77);
+  --btn-shad-static: 0 8px 20px 0 oklch(0.9028 0.0059 153.77);
+  --shad-nav: 0 8px 16px 0 oklch(0.8059 0.0026 165.06 / 15%);
 }
 
 .dark {
   /* Colors */
   --bg-body: oklch(0.1669 0.0234 184.92);
 
+  --toggle-bg: oklch(0.6577 0.1653 125.71);
+  --toggle-icon: oklch(0.3033 0.0629 159.41);
+
+  --btn-primary: oklch(0.8171 0.122 88.95);
+  --btn-txt-prim: oklch(0.1548 0.0065 156.36);
+  --btn-hov: oklch(0.7887 0.1442 86.85);
+
   /* Text Colors */
   --pg-prim: oklch(0.9981 0.0053 117.92);
   --pg-light: oklch(0.9981 0.0053 117.92);
+  --btn-shad: 0 8px 20px 0 oklch(0.2866 0.0505 100.85);
+}
+
+
+
+/* Custom CSS */
+
+.nav-link {
+  @apply text-lg text-black-pg-light hover:text-btn-hover-bg transition-colors duration-500 ease-in-out;
 }
