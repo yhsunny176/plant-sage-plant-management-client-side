@@ -30,29 +30,29 @@ const ResponsiveNavigation = () => {
 
                 {/* About Link */}
                 <NavigationMenuItem>
-                    <Link to="/about">
-                        <NavigationMenuLink className={"nav-link"}>About</NavigationMenuLink>
+                    <Link to="/all-plants">
+                        <NavigationMenuLink className={"nav-link"}>All Plants</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
 
                 {/* Services Link */}
                 <NavigationMenuItem>
-                    <Link to="/services">
-                        <NavigationMenuLink className={"nav-link"}>Services</NavigationMenuLink>
+                    <Link to="/add-plants">
+                        <NavigationMenuLink className={"nav-link"}>Add Plants</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
 
                 {/* Contact Link */}
                 <NavigationMenuItem>
-                    <Link to="/contact">
-                        <NavigationMenuLink className={"nav-link"}>Contact</NavigationMenuLink>
+                    <Link to="/my-plants">
+                        <NavigationMenuLink className={"nav-link"}>My Plants</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
 
                 {/* Blog Link */}
                 <NavigationMenuItem>
-                    <Link to="/blog">
-                        <NavigationMenuLink className={"nav-link"}>Blog</NavigationMenuLink>
+                    <Link to="/care-tips">
+                        <NavigationMenuLink className={"nav-link"}>Care Tips</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>
@@ -86,22 +86,22 @@ const ResponsiveNavigation = () => {
                         </Link>
 
                         {/* About Link */}
-                        <Link to="/about" onClick={() => setIsOpen(false)} className={"nav-link"}>
-                            About
+                        <Link to="/all-plants" onClick={() => setIsOpen(false)} className={"nav-link"}>
+                            All Plants
                         </Link>
 
                         {/* Services Link */}
-                        <Link to="/services" onClick={() => setIsOpen(false)} className={"nav-link"}>
-                            Services
+                        <Link to="/add-plants" onClick={() => setIsOpen(false)} className={"nav-link"}>
+                            Add Plants
                         </Link>
 
                         {/* Contact Link */}
-                        <Link to="/contact" onClick={() => setIsOpen(false)} className={"nav-link"}>
-                            Contact
+                        <Link to="/my-plants" onClick={() => setIsOpen(false)} className={"nav-link"}>
+                            My Plants
                         </Link>
 
                         {/* Blog Link */}
-                        <Link to="/blog" onClick={() => setIsOpen(false)} className={"nav-link"}>
+                        <Link to="/care-tips" onClick={() => setIsOpen(false)} className={"nav-link"}>
                             Blog
                         </Link>
                     </nav>
