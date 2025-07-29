@@ -6,12 +6,28 @@ import { Button } from "@/components/ui/button";
 import useAuth from "@/hooks/useAuth";
 // import Swal from "sweetalert2";
 import { HiMiniPencil, HiMiniTrash } from "react-icons/hi2";
+import DeleteModal from "@/components/common/DeleteModal";
 
 const MyPlants = () => {
     const navigate = useNavigate();
     const { user } = useAuth();
     const [myPlants, setMyPlants] = useState([]);
     const [loading, setLoading] = useState(false);
+    // State for delete modal
+    const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+    const [selectedPlant, setSelectedPlant] = useState(null);
+
+    // Open delete modal for a specific plant
+    const handleOpenDeleteModal = (plant) => {
+        setSelectedPlant(plant);
+        setDeleteModalOpen(true);
+    };
+
+    // Close delete modal
+    const handleCloseDeleteModal = () => {
+        setDeleteModalOpen(false);
+        setSelectedPlant(null);
+    };
 
     // Fetch user's plants
     useEffect(() => {
@@ -195,12 +211,24 @@ const MyPlants = () => {
                                                         <HiMiniPencil className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                                                         <span>Update</span>
                                                     </Button>
+
                                                     <Button
+                                                        onClick={() => handleOpenDeleteModal(plant)}
                                                         className="flex-1 bg-btn-background-danger hover:bg-btn-background-danger-hover text-base-white cursor-pointer"
                                                         title="Delete plant">
                                                         <HiMiniTrash className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                                                         <span>Delete</span>
                                                     </Button>
+                                                    {/* Delete Modal */}
+                                                    <DeleteModal
+                                                        open={deleteModalOpen}
+                                                        onOpenChange={(open) => {
+                                                            if (!open) handleCloseDeleteModal();
+                                                        }}
+                                                        onConfirm={() => {}}
+                                                        loading={false}
+                                                        plantName={selectedPlant?.plantName}
+                                                    />
                                                 </div>
                                             </div>
                                         </div>
