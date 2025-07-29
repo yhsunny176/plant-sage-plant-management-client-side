@@ -1,6 +1,7 @@
 import Banner from "@/components/common/Banner";
 import NewPlants from "@/components/common/NewPlants";
 import PlantCareTips from "@/components/common/PlantCareTips";
+import PlantTrackerPreview from "@/components/common/PlantTrackerPreview";
 import React, { useEffect, useRef } from "react";
 import toast from "react-hot-toast";
 import { IoIosCheckmarkCircle } from "react-icons/io";
@@ -41,6 +42,9 @@ const Home = () => {
             <section>
                 <PlantCareTips />
             </section>
+
+            {/* Plant Tracker & Journal Preview Section */}
+            <PlantTrackerPreview />
         </>
     );
 };
