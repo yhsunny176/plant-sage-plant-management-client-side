@@ -34,7 +34,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "plant/:id",
-                element: <SinglePlant />,
+                element: (
+                    <PrivateRouteProvider>
+                        <SinglePlant />
+                    </PrivateRouteProvider>
+                ),
             },
         ],
     },
