@@ -6,6 +6,7 @@ import Error from "@/pages/Error";
 import Authentication from "@/layouts/Authentication";
 import Login from "@/pages/Login";
 import Registration from "@/pages/Registration";
+import AddPlant from "@/pages/AddPlant";
 
 const router = createBrowserRouter([
     {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home />,
+            },
+            {
+                path: "add-plant",
+                element: <AddPlant />,
             },
         ],
     },

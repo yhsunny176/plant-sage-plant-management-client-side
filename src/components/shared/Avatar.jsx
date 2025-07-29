@@ -40,7 +40,7 @@ const Avatar = () => {
                                             ? "opacity-100 scale-y-100 translate-y-0"
                                             : "opacity-0 scale-y-95 translate-y-2 pointer-events-none"
                                     }`}>
-                        <span className="text-xl font-bold text-black-pg-base">Username:</span>
+                        <span className="text-xl font-bold text-black-pg-static">Username:</span>
                         <p className="font-medium text-base text-black-light-static">
                             {user.displayName || user.email?.split('@')[0] || 'User'}
                         </p>

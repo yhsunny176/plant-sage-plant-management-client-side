@@ -49,6 +49,7 @@ p, input {
   --color-heading-secondary: var(--head-sec);
   --color-black-pg-base: var(--pg-prim);
   --color-black-light-static: var(--pg-stat-lt);
+  --color-black-pg-static: var(--pg-stat);
   --color-black-pg-light: var(--pg-light);
   --color-black-subtext-banner: var(--banner-sub);
   --color-white-base: var(--wht-base);
@@ -94,6 +95,7 @@ p, input {
   --head-prim: oklch(0.3033 0.0629 159.41);
   --head-sec: oklch(0.3033 0.0629 159.41); 
   --pg-prim: oklch(0.1548 0.0065 156.36);
+  --pg-stat: oklch(0.1548 0.0065 156.36);
   --pg-stat-lt: oklch(0.528 0.0048 157.08);
   --pg-light: oklch(0.528 0.0048 157.08);
   --banner-sub: oklch(0.4786 0.0049 157.06);
@@ -138,9 +140,9 @@ p, input {
   /* Input Field */
   --inp-lab: oklch(0.8662 0.0961 120.46);
   --inp-bdr: oklch(0.6447 0.0028 165.03);
-  --inp-cont-bg: oklch(0.9981 0.0053 117.92);
-  --inp-phld: oklch(0.5523 0.0047 157.09);
-  --input-txt: oklch(0.3957 0.0031 164.94);
+  --inp-cont-bg: oklch(0.3994 0.0664 181.78);
+  --inp-phld: oklch(0.9981 0.0053 117.92);
+  --input-txt: oklch(0.9981 0.0053 117.92);
   --inp-foc: oklch(0.8171 0.122 88.95);
 
 
@@ -200,6 +202,20 @@ p, input {
 
 .submit-btn-form {
   @apply w-full mt-4 sm:mt-6 h-10 sm:h-11 text-base md:text-lg px-4 py-2 rounded-md font-medium transition-all duration-300;
+}
+
+/* Hide default date picker icon and add custom styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+input[type="date"]::-moz-calendar-picker-indicator {
+  opacity: 0;
 }
 
 /* Ensure text selection works properly in input fields */

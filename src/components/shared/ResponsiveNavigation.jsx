@@ -37,7 +37,7 @@ const ResponsiveNavigation = () => {
 
                 {/* Services Link */}
                 <NavigationMenuItem>
-                    <Link className="nav-link" to="/add-plants">
+                    <Link className="nav-link" to="/add-plant">
                         Add Plants
                     </Link>
                 </NavigationMenuItem>

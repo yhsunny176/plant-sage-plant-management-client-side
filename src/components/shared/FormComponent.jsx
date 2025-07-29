@@ -4,6 +4,7 @@ import { classNames } from "@/lib/utils";
 import { useState } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { HiOutlineCalendarDays } from "react-icons/hi2";
 
 // Main Form Component
 export const Form = ({ children, initialValues = {}, onSubmit, className, ...props }) => {
@@ -78,9 +79,12 @@ export const FormField = ({ name, label, type = "text", placeholder, required = 
         "text-lg font-medium leading-none text-input-label peer-disabled:cursor-not-allowed peer-disabled:opacity-70";
 
     const defaultInputClassName =
-        "flex h-10 w-full rounded-md border border-input-border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
+        "flex h-10 w-full rounded-md bg-input-background border border-input-border px-3 py-2 text-input-text-primary placeholder-input-placeholder text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
 
     const defaultErrorClassName = "text-sm text-red-500";
+
+    // For date inputs, we need to add custom calendar icon
+    const isDateInput = type === "date";
 
     return (
         <div className={defaultFieldClassName}>
@@ -90,18 +94,31 @@ export const FormField = ({ name, label, type = "text", placeholder, required = 
                     {required && <span className="text-error-text ml-1">*</span>}
                 </label>
             )}
-            <Input
-                id={name}
-                name={name}
-                type={type}
-                value={values[name] || ""}
-                placeholder={placeholder}
-                onChange={(e) => updateField(name, e.target.value)}
-                className={defaultInputClassName}
-                aria-invalid={!!errors[name]}
-                aria-describedby={errors[name] ? `${name}-error` : undefined}
-                {...props}
-            />
+            <div className={isDateInput ? "relative" : ""}>
+                <Input
+                    id={name}
+                    name={name}
+                    type={type}
+                    value={values[name] || ""}
+                    placeholder={placeholder}
+                    onChange={(e) => updateField(name, e.target.value)}
+                    className={classNames(
+                        defaultInputClassName,
+                        isDateInput ? "pr-10" : ""
+                    )}
+                    aria-invalid={!!errors[name]}
+                    aria-describedby={errors[name] ? `${name}-error` : undefined}
+                    {...props}
+                />
+                {isDateInput && (
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                        <HiOutlineCalendarDays
+                            className="h-5 w-5 text-input-text-primary opacity-70"
+                            aria-hidden="true"
+                        />
+                    </div>
+                )}
+            </div>
             {errors[name] && (
                 <p id={`${name}-error`} className={defaultErrorClassName}>
                     {errors[name]}
