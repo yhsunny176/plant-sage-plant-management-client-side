@@ -14,14 +14,10 @@ import "../../css/swiper.css";
 
 // import required modules
 import { Autoplay, Keyboard, EffectFade, Pagination } from "swiper/modules";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { Button } from "../ui/button";
 
 const Banner = () => {
-    const navigate = useNavigate();
-    const handleSeeAllDishes = () => {
-        navigate("/all-foods");
-    };
     return (
         <>
             <Swiper

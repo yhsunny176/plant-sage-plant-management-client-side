@@ -18,6 +18,7 @@ p {
 /* Main Colors to use */
 @theme inline {
   --color-background-body: var(--bg-body);
+  --color-loading-bg: var(--bg-body-loading);
 
   --color-toggle-background: var(--toggle-bg);
   --color-toggle-icon-color: var(--toggle-icon);
@@ -52,6 +53,7 @@ p {
 :root {
   /* Colors */
   --bg-body: oklch(0.9981 0.0053 117.92);
+  --bg-body-loading: oklch(0.8979 0.026 128.79);
 
   --toggle-bg: oklch(0.5237 0.0994 169.03);
   --toggle-hov: oklch(0.3033 0.0629 159.41);
