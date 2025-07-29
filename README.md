@@ -52,3 +52,36 @@ Plant Sage is designed to help users keep their indoor plants healthy and organi
 | swiper            | Carousel/slider                   |
 | date-fns          | Date utilities                    |
 | ShadCn UI         | Accessible UI primitives          |
+
+## Installation & Running Locally
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Programming-Hero-Web-Course4/b11a10-client-side-yhsunny176.git
+   cd b11a10-client-side-yhsunny176
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables:**
+   - Create a `.env` file in the root directory if required (for Firebase or other API keys).
+   - Example:
+     ```env
+     VITE_FIREBASE_API_KEY=your_firebase_api_key
+     VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+     VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
+     VITE_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+     VITE_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+     VITE_FIREBASE_APP_ID=your_firebase_app_id
+     ```
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open the app:**
+   - Visit `http://localhost:5173` in your browser.
