@@ -29,6 +29,7 @@ p, input {
 /* Main Colors to use */
 @theme inline {
   --color-background-body: var(--bg-body);
+  --color-background-primary: var(--bg-primary);
   --color-loading-bg: var(--bg-body-loading);
   --color-footer-background: var(--footer-bg);
 
@@ -48,6 +49,9 @@ p, input {
   /* Text Colors */
   --color-heading-primary: var(--head-prim);
   --color-heading-secondary: var(--head-sec);
+  --color-black-text-dark: var(--txt-dark);
+  --color-black-text-base: var(--txt-base);
+  --color-black-text-light: var(--txt-light);
   --color-black-pg-base: var(--pg-prim);
   --color-black-light-static: var(--pg-stat-lt);
   --color-black-pg-static: var(--pg-stat);
@@ -65,6 +69,10 @@ p, input {
   --color-input-text-primary: var(--input-txt);
   --color-input-focus: var(--inp-foc);
 
+  /* Card & Table */
+  --color-card-background: var(--card-bg);
+  --color-card-stroke: var(--card-stroke);
+  --shadow-card-shadow: var(--card-shadow);
 
   /* Shadows */
   --shadow-btn-shadow-static: var(--btn-shad-static);
@@ -78,6 +86,7 @@ p, input {
 :root {
   /* Colors */
   --bg-body: oklch(0.9981 0.0053 117.92);
+  --bg-primary: oklch(0.9781 0.0043 117.92);
   --bg-body-loading: oklch(0.8979 0.026 128.79);
   --footer-bg: oklch(0.5237 0.0994 169.03);
 
@@ -95,7 +104,10 @@ p, input {
 
   /* Text Colors */
   --head-prim: oklch(0.3033 0.0629 159.41);
-  --head-sec: oklch(0.3033 0.0629 159.41); 
+  --head-sec: oklch(0.3033 0.0629 159.41);
+  --txt-dark: oklch(0.2033 0.0529 159.41);
+  --txt-base: oklch(0.3033 0.0629 159.41);
+  --txt-light: oklch(0.528 0.0048 157.08);
   --pg-prim: oklch(0.1548 0.0065 156.36);
   --pg-stat: oklch(0.1548 0.0065 156.36);
   --pg-stat-lt: oklch(0.528 0.0048 157.08);
@@ -105,7 +117,6 @@ p, input {
   --err-txt: oklch(0.5874 0.2238 28.79);
   --success-txt: oklch(0.5435 0.162 146.36);
 
-
   /* Input Field */
   --inp-lab: oklch(0.3033 0.0629 159.41);
   --inp-bdr: oklch(0.6447 0.0028 165.03);
@@ -113,6 +124,11 @@ p, input {
   --inp-phld: oklch(0.5523 0.0047 157.09);
   --input-txt: oklch(0.3957 0.0031 164.94);
   --inp-foc: oklch(0.5237 0.0994 169.03);
+
+  /* Card & Table */
+  --card-bg: oklch(0.9981 0.0053 117.92);
+  --card-stroke: oklch(0.8447 0.0028 165.03);
+  --card-shadow: 0 4px 12px 0 oklch(0.8059 0.0026 165.06 / 10%);
 
   /* shadows */
   --btn-shad: 0 8px 20px 0 oklch(0.9028 0.0059 153.77);
@@ -123,6 +139,7 @@ p, input {
 .dark {
   /* Colors */
   --bg-body: oklch(0.1669 0.0234 184.92);
+  --bg-primary: oklch(0.2169 0.0334 184.92);
   --footer-bg: oklch(0.2523 0.0377 183.57);
 
   --toggle-bg: oklch(0.6577 0.1653 125.71);
@@ -133,12 +150,14 @@ p, input {
   --btn-hov: oklch(0.7887 0.1442 86.85);
 
   /* Text Colors */
-  --head-sec: oklch(0.6577 0.1653 125.71); 
+  --head-sec: oklch(0.6577 0.1653 125.71);
+  --txt-dark: oklch(0.9281 0.0153 117.92);
+  --txt-base: oklch(0.8581 0.0253 117.92);
+  --txt-light: oklch(0.7581 0.0353 117.92);
   --pg-prim: oklch(0.9981 0.0053 117.92);
   --pg-light: oklch(0.9981 0.0053 117.92);
   --err-txt: oklch(0.6574 0.2115 26.77);
   --success-txt: oklch(0.7011 0.211 146.16);
-
 
   /* Input Field */
   --inp-lab: oklch(0.8662 0.0961 120.46);
@@ -148,11 +167,13 @@ p, input {
   --input-txt: oklch(0.9981 0.0053 117.92);
   --inp-foc: oklch(0.8171 0.122 88.95);
 
+  /* Card & Table */
+  --card-bg: oklch(0.2669 0.0434 184.92);
+  --card-stroke: oklch(0.4447 0.0528 185.03);
+  --card-shadow: 0 4px 12px 0 oklch(0.1059 0.0126 185.06 / 20%);
 
   /* Shadows */
   --btn-shad: 0 8px 20px 0 oklch(0.2866 0.0505 100.85);
-
-
 
 }
 

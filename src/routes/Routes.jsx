@@ -8,6 +8,7 @@ import Login from "@/pages/Login";
 import Registration from "@/pages/Registration";
 import AddPlant from "@/pages/AddPlant";
 import AllPlants from "@/pages/AllPlants";
+import SinglePlant from "@/pages/SinglePlant";
 import PrivateRouteProvider from "@/providers/PrivateRouteProvider";
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: "all-plants",
                 element: <AllPlants />,
+            },
+            {
+                path: "plant/:id",
+                element: <SinglePlant />,
             },
         ],
     },

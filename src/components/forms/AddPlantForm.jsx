@@ -5,9 +5,11 @@ import toast from "react-hot-toast";
 import { HiMiniXCircle } from "react-icons/hi2";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
+import useAuth from "@/hooks/useAuth";
 
 const AddPlantForm = () => {
     const navigate = useNavigate();
+    const { user } = useAuth();
 
     const initialValues = {
         image: "",
@@ -137,6 +139,10 @@ const AddPlantForm = () => {
                 plantName: values.plantName.trim(),
                 description: values.description.trim(),
                 wateringFrequency: values.wateringFrequency.trim(),
+                addedBy: {
+                    name: user?.displayName || "",
+                    email: user?.email || "",
+                },
             };
 
             // Send data to backend API

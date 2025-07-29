@@ -2,12 +2,13 @@ import Banner from "@/components/common/Banner";
 import React, { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { IoIosCheckmarkCircle } from "react-icons/io";
-import { useLocation, Link } from "react-router";
+import { useLocation, Link, useNavigate } from "react-router";
 import LoaderSpinner from "../components/shared/Loader/LoaderSpinner";
 import { Button } from "@/components/ui/button";
 
 const Home = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const { message, type } = location.state || {};
     const toastShown = useRef(false);
     const [newPlants, setNewPlants] = useState([]);
@@ -198,6 +199,7 @@ const Home = () => {
 
                                                         {/* View Details Button */}
                                                         <button
+                                                            onClick={() => navigate(`/plant/${plant._id}`)}
                                                             className="w-full inline-flex items-center justify-center px-3 md:px-4 py-2 md:py-3 text-base font-bold text-btn-text-primary bg-btn-background-primary hover:bg-btn-hover-bg rounded-md transition-colors duration-300 cursor-pointer"
                                                             title="View plant details"
                                                         >
