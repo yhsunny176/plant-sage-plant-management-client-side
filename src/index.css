@@ -30,6 +30,7 @@ p, input {
 @theme inline {
   --color-background-body: var(--bg-body);
   --color-loading-bg: var(--bg-body-loading);
+  --color-footer-background: var(--footer-bg);
 
   --color-toggle-background: var(--toggle-bg);
   --color-toggle-icon-color: var(--toggle-icon);
@@ -78,6 +79,7 @@ p, input {
   /* Colors */
   --bg-body: oklch(0.9981 0.0053 117.92);
   --bg-body-loading: oklch(0.8979 0.026 128.79);
+  --footer-bg: oklch(0.5237 0.0994 169.03);
 
   --toggle-bg: oklch(0.5237 0.0994 169.03);
   --toggle-hov: oklch(0.3033 0.0629 159.41);
@@ -121,6 +123,7 @@ p, input {
 .dark {
   /* Colors */
   --bg-body: oklch(0.1669 0.0234 184.92);
+  --footer-bg: oklch(0.2523 0.0377 183.57);
 
   --toggle-bg: oklch(0.6577 0.1653 125.71);
   --toggle-icon: oklch(0.3033 0.0629 159.41);
