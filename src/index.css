@@ -22,7 +22,7 @@ h1 {
   height: 100%;
 }
 
-p, input {
+p, input, select, textarea {
   font-family: "Lato", sans-serif;
 }
 

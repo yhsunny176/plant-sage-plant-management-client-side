@@ -12,7 +12,7 @@ export const FormSelect = ({ name, label, options = [], placeholder, required = 
         "text-lg font-medium leading-none text-input-label peer-disabled:cursor-not-allowed peer-disabled:opacity-70";
 
     const defaultSelectClassName =
-        "flex h-10 w-full rounded-md bg-input-background border border-input-border px-3 py-2 text-input-text-primary text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 appearance-none cursor-pointer";
+        "flex h-10 w-full rounded-md bg-input-background border border-input-border px-3 py-2 mt-4 text-input-text-primary text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 appearance-none cursor-pointer";
 
     const defaultErrorClassName = "text-sm text-red-500";
 
@@ -83,7 +83,7 @@ export const FormTextarea = ({ name, label, placeholder, required = false, rows 
         "text-lg font-medium leading-none text-input-label peer-disabled:cursor-not-allowed peer-disabled:opacity-70";
 
     const defaultTextareaClassName =
-        "flex min-h-[80px] w-full rounded-md bg-input-background border border-input-border px-3 py-2 text-input-text-primary placeholder-input-placeholder text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 resize-vertical";
+        "flex h-40 w-full rounded-md bg-input-background border border-input-border mt-4 px-3 py-2 text-input-text-primary placeholder-input-placeholder text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 resize-vertical";
 
     const defaultErrorClassName = "text-sm text-red-500";
 
