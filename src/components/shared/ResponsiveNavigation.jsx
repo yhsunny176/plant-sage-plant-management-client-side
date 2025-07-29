@@ -44,7 +44,7 @@ const ResponsiveNavigation = () => {
 
                 {/* Contact Link */}
                 <NavigationMenuItem>
-                    <Link className="nav-link" to="/my-plants">
+                    <Link className="nav-link" to="/my-plants/:email">
                         My Plants
                     </Link>
                 </NavigationMenuItem>
@@ -96,7 +96,7 @@ const ResponsiveNavigation = () => {
                         </Link>
 
                         {/* Contact Link */}
-                        <Link to="/my-plants" onClick={() => setIsOpen(false)} className={"nav-link-mobile"}>
+                        <Link to="/my-plants/:email" onClick={() => setIsOpen(false)} className={"nav-link-mobile"}>
                             My Plants
                         </Link>
 

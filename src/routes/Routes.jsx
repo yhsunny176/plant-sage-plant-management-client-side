@@ -9,6 +9,7 @@ import Registration from "@/pages/Registration";
 import AddPlant from "@/pages/AddPlant";
 import AllPlants from "@/pages/AllPlants";
 import SinglePlant from "@/pages/SinglePlant";
+import MyPlants from "@/pages/MyPlants";
 import PrivateRouteProvider from "@/providers/PrivateRouteProvider";
 
 const router = createBrowserRouter([
@@ -31,6 +32,14 @@ const router = createBrowserRouter([
             {
                 path: "all-plants",
                 element: <AllPlants />,
+            },
+            {
+                path: "my-plants/:email",
+                element: (
+                    <PrivateRouteProvider>
+                        <MyPlants />
+                    </PrivateRouteProvider>
+                ),
             },
             {
                 path: "plant/:id",
