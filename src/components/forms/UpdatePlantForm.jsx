@@ -5,6 +5,7 @@ import { FormSelect, FormTextarea } from "@/components/shared/FormSelect";
 import toast from "react-hot-toast";
 import { HiMiniXCircle } from "react-icons/hi2";
 import useAuth from "@/hooks/useAuth";
+import LoaderSpinner from "../shared/Loader/LoaderSpinner";
 
 const UpdatePlantForm = () => {
     const { id } = useParams();
@@ -141,7 +142,7 @@ const UpdatePlantForm = () => {
             const result = await response.json();
             if (!response.ok) throw new Error(result.message || "Failed to update plant");
             toast.success("Plant updated successfully!");
-            navigate("/my-plants");
+            navigate(`/my-plants/${user.email}`);
         } catch (error) {
             console.error("Update plant error:", error);
             toast.error("Failed to update plant. Please try again.", {
@@ -152,7 +153,11 @@ const UpdatePlantForm = () => {
     };
 
     if (loading || !initialValues) {
-        return <div className="text-center py-12">Loading...</div>;
+        return (
+            <div className="text-center py-12">
+                <LoaderSpinner />
+            </div>
+        );
     }
 
     return (
