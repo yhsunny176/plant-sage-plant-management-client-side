@@ -140,7 +140,7 @@ const AddPlantForm = () => {
             };
 
             // Send data to backend API
-            const response = await fetch("http://localhost:5000/add-plant", {
+            const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/add-plant`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
