@@ -1,58 +1,58 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router";
+import { Link } from "react-router";
 import { useTheme } from "@/hooks/useTheme";
 import { Button } from "@/components/ui/button";
-import {
-    NavigationMenu,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { RxHamburgerMenu } from "react-icons/rx";
+import useAuth from "@/hooks/useAuth";
+import LoaderSpinner from "./Loader/LoaderSpinner";
 
 const ResponsiveNavigation = () => {
     const { theme } = useTheme();
-    const location = useLocation();
     const [isOpen, setIsOpen] = useState(false);
+    const { user, loading, logOut } = useAuth();
+
+    const handleLogOut = () => {
+        logOut();
+    };
 
     // Desktop Navigation Menu
     const DesktopNavigation = () => (
         <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className={"space-x-6"}>
                 {/* Home Link */}
-                <NavigationMenuItem className={"nav-link"}>
-                    <Link to="/">
-                        <NavigationMenuLink className={"nav-link"}>Home</NavigationMenuLink>
+                <NavigationMenuItem>
+                    <Link className={"nav-link"} to="/">
+                        Home
                     </Link>
                 </NavigationMenuItem>
 
                 {/* About Link */}
                 <NavigationMenuItem>
-                    <Link to="/all-plants">
-                        <NavigationMenuLink className={"nav-link"}>All Plants</NavigationMenuLink>
+                    <Link className="nav-link" to="/all-plants">
+                        All Plants
                     </Link>
                 </NavigationMenuItem>
 
                 {/* Services Link */}
                 <NavigationMenuItem>
-                    <Link to="/add-plants">
-                        <NavigationMenuLink className={"nav-link"}>Add Plants</NavigationMenuLink>
+                    <Link className="nav-link" to="/add-plants">
+                        Add Plants
                     </Link>
                 </NavigationMenuItem>
 
                 {/* Contact Link */}
                 <NavigationMenuItem>
-                    <Link to="/my-plants">
-                        <NavigationMenuLink className={"nav-link"}>My Plants</NavigationMenuLink>
+                    <Link className="nav-link" to="/my-plants">
+                        My Plants
                     </Link>
                 </NavigationMenuItem>
 
                 {/* Blog Link */}
                 <NavigationMenuItem>
-                    <Link to="/care-tips">
-                        <NavigationMenuLink className={"nav-link"}>Care Tips</NavigationMenuLink>
+                    <Link className="nav-link" to="/care-tips">
+                        Care Tips
                     </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>
@@ -79,32 +79,50 @@ const ResponsiveNavigation = () => {
                             />
                         </SheetTitle>
                     </SheetHeader>
-                    <nav className="flex flex-col gap-6 mt-6 px-8 *:text-xl">
+                    <nav className="flex flex-col gap-8 my-6 px-8">
                         {/* Home Link */}
-                        <Link to="/" onClick={() => setIsOpen(false)} className={"nav-link"}>
+                        <Link to="/" onClick={() => setIsOpen(false)} className={"nav-link-mobile"}>
                             Home
                         </Link>
 
                         {/* About Link */}
-                        <Link to="/all-plants" onClick={() => setIsOpen(false)} className={"nav-link"}>
+                        <Link to="/all-plants" onClick={() => setIsOpen(false)} className={"nav-link-mobile"}>
                             All Plants
                         </Link>
 
                         {/* Services Link */}
-                        <Link to="/add-plants" onClick={() => setIsOpen(false)} className={"nav-link"}>
+                        <Link to="/add-plants" onClick={() => setIsOpen(false)} className={"nav-link-mobile"}>
                             Add Plants
                         </Link>
 
                         {/* Contact Link */}
-                        <Link to="/my-plants" onClick={() => setIsOpen(false)} className={"nav-link"}>
+                        <Link to="/my-plants" onClick={() => setIsOpen(false)} className={"nav-link-mobile"}>
                             My Plants
                         </Link>
 
                         {/* Blog Link */}
-                        <Link to="/care-tips" onClick={() => setIsOpen(false)} className={"nav-link"}>
+                        <Link to="/care-tips" onClick={() => setIsOpen(false)} className={"nav-link-mobile"}>
                             Blog
                         </Link>
                     </nav>
+
+                    <div className="flex-none lg:hidden px-8">
+                        {loading ? (
+                            <div className="flex items-center justify-center">
+                                <LoaderSpinner size={20} color="#ffffff" className="flex justify-center items-center" />
+                            </div>
+                        ) : user ? (
+                            <Button className="login-btn" onClick={handleLogOut}>
+                                Logout
+                            </Button>
+                        ) : (
+                            <Button asChild>
+                                <Link to={"/auth/login"} className={"login-btn"}>
+                                    Login
+                                </Link>
+                            </Button>
+                        )}
+                    </div>
                 </SheetContent>
             </Sheet>
         </div>

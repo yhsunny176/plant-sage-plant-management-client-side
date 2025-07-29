@@ -4,6 +4,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body,
 h1 {
   margin: 0;
@@ -11,7 +18,11 @@ h1 {
   font-family: "Inria", serif;
 }
 
-p {
+#root {
+  height: 100%;
+}
+
+p, input {
   font-family: "Lato", sans-serif;
 }
 
@@ -35,10 +46,22 @@ p {
 
   /* Text Colors */
   --color-heading-primary: var(--head-prim);
+  --color-heading-secondary: var(--head-sec);
   --color-black-pg-base: var(--pg-prim);
+  --color-black-light-static: var(--pg-stat-lt);
   --color-black-pg-light: var(--pg-light);
   --color-black-subtext-banner: var(--banner-sub);
   --color-white-base: var(--wht-base);
+  --color-error-text: var(--err-txt);
+  --color-success-text: var(--success-txt);
+
+  /* Input Field */
+  --color-input-label: var(--inp-lab);
+  --color-input-background: var(--inp-cont-bg);
+  --color-input-border: var(--inp-bdr);
+  --color-input-placeholder: var(--inp-phld);
+  --color-input-text-primary: var(--input-txt);
+  --color-input-focus: var(--inp-foc);
 
 
   /* Shadows */
@@ -69,10 +92,23 @@ p {
 
   /* Text Colors */
   --head-prim: oklch(0.3033 0.0629 159.41);
+  --head-sec: oklch(0.3033 0.0629 159.41); 
   --pg-prim: oklch(0.1548 0.0065 156.36);
+  --pg-stat-lt: oklch(0.528 0.0048 157.08);
   --pg-light: oklch(0.528 0.0048 157.08);
   --banner-sub: oklch(0.4786 0.0049 157.06);
   --wht-base: oklch(0.9981 0.0053 117.92);
+  --err-txt: oklch(0.5874 0.2238 28.79);
+  --success-txt: oklch(0.5435 0.162 146.36);
+
+
+  /* Input Field */
+  --inp-lab: oklch(0.3033 0.0629 159.41);
+  --inp-bdr: oklch(0.6447 0.0028 165.03);
+  --inp-cont-bg: oklch(0.9981 0.0053 117.92);
+  --inp-phld: oklch(0.5523 0.0047 157.09);
+  --input-txt: oklch(0.3957 0.0031 164.94);
+  --inp-foc: oklch(0.5237 0.0994 169.03);
 
   /* shadows */
   --btn-shad: 0 8px 20px 0 oklch(0.9028 0.0059 153.77);
@@ -92,9 +128,27 @@ p {
   --btn-hov: oklch(0.7887 0.1442 86.85);
 
   /* Text Colors */
+  --head-sec: oklch(0.6577 0.1653 125.71); 
   --pg-prim: oklch(0.9981 0.0053 117.92);
   --pg-light: oklch(0.9981 0.0053 117.92);
+  --err-txt: oklch(0.6574 0.2115 26.77);
+  --success-txt: oklch(0.7011 0.211 146.16);
+
+
+  /* Input Field */
+  --inp-lab: oklch(0.8662 0.0961 120.46);
+  --inp-bdr: oklch(0.6447 0.0028 165.03);
+  --inp-cont-bg: oklch(0.9981 0.0053 117.92);
+  --inp-phld: oklch(0.5523 0.0047 157.09);
+  --input-txt: oklch(0.3957 0.0031 164.94);
+  --inp-foc: oklch(0.8171 0.122 88.95);
+
+
+  /* Shadows */
   --btn-shad: 0 8px 20px 0 oklch(0.2866 0.0505 100.85);
+
+
+
 }
 
 
@@ -103,6 +157,10 @@ p {
 
 .nav-link {
   @apply text-lg text-black-pg-light hover:text-btn-hover-bg transition-colors duration-500 ease-in-out;
+}
+
+.nav-link-mobile {
+  @apply text-xl text-black-pg-light hover:text-btn-hover-bg transition-colors duration-500 ease-in-out;
 }
 
 .banner-main-container {
@@ -127,4 +185,46 @@ p {
 
 .banner-img {
   @apply absolute inset-0 w-full h-full object-cover object-center z-0;
+}
+
+.login-btn {
+  @apply w-full md:block cursor-pointer bg-btn-background-primary text-btn-text-primary rounded-md hover:bg-btn-background-primary transition-colors duration-600 ease-in-out;
+}
+
+
+/* Forms */
+
+.link-form {
+  @apply text-btn-background-primary hover:text-btn-hover-bg hover:underline font-medium transition-colors duration-300;
+}
+
+.submit-btn-form {
+  @apply w-full mt-4 sm:mt-6 h-10 sm:h-11 text-base md:text-lg px-4 py-2 rounded-md font-medium transition-all duration-300;
+}
+
+/* Ensure text selection works properly in input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+textarea {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+/* Custom selection colors for better visibility */
+input[type="text"]::selection,
+input[type="email"]::selection,
+input[type="password"]::selection,
+input[type="url"]::selection,
+textarea::selection {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+/* Avatar */
+.avatar-img {
+  @apply h-9 w-9 rounded-full object-cover hover:transform hover:scale-105 transition-transform duration-400 ease-in-out;
 }

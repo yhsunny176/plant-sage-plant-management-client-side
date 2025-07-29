@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Error from "@/pages/Error";
 import Authentication from "@/layouts/Authentication";
 import Login from "@/pages/Login";
+import Registration from "@/pages/Registration";
 
 const router = createBrowserRouter([
     {

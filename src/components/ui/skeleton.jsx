@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils"
+import { classNames } from "@/lib/utils"
 
 function Skeleton({
   className,
@@ -7,7 +7,7 @@ function Skeleton({
   return (
     <div
       data-slot="skeleton"
-      className={cn("bg-accent animate-pulse rounded-md", className)}
+      className={classNames("bg-accent animate-pulse rounded-md", className)}
       {...props} />
   );
 }

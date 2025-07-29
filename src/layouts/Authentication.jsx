@@ -3,7 +3,7 @@ import { Outlet } from "react-router";
 
 const Authentication = () => {
     return (
-        <div>
+        <div className="h-full">
             <Outlet />
         </div>
     );
