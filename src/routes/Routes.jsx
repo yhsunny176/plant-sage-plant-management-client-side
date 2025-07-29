@@ -49,6 +49,14 @@ const router = createBrowserRouter([
                     </PrivateRouteProvider>
                 ),
             },
+            {
+                path: "update-plant/:id",
+                element: (
+                    <PrivateRouteProvider>
+                        <SinglePlant />
+                    </PrivateRouteProvider>
+                ),
+            },
         ],
     },
     {

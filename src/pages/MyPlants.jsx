@@ -189,13 +189,14 @@ const MyPlants = () => {
                                                 {/* Action Buttons */}
                                                 <div className="flex gap-2">
                                                     <Button
-                                                        className="flex-1 bg-btn-background-primary hover:bg-btn-background-primary-hover text-white cursor-pointer"
+                                                        onClick={() => navigate(`/update-plant/${plant._id}`)}
+                                                        className="flex-1 bg-btn-background-primary hover:bg-btn-background-primary-hover text-base-white cursor-pointer"
                                                         title="Update plant details">
                                                         <HiMiniPencil className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                                                         <span>Update</span>
                                                     </Button>
                                                     <Button
-                                                        className="flex-1 bg-btn-background-danger hover:bg-btn-background-danger-hover text-white cursor-pointer"
+                                                        className="flex-1 bg-btn-background-danger hover:bg-btn-background-danger-hover text-base-white cursor-pointer"
                                                         title="Delete plant">
                                                         <HiMiniTrash className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                                                         <span>Delete</span>
