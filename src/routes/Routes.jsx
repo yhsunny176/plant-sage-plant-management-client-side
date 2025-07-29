@@ -7,6 +7,7 @@ import Authentication from "@/layouts/Authentication";
 import Login from "@/pages/Login";
 import Registration from "@/pages/Registration";
 import AddPlant from "@/pages/AddPlant";
+import AllPlants from "@/pages/AllPlants";
 import PrivateRouteProvider from "@/providers/PrivateRouteProvider";
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
                     </PrivateRouteProvider>
                 ),
             },
+            {
+                path: "all-plants",
+                element: <AllPlants />,
+            },
         ],
     },
     {
@@ -43,7 +48,7 @@ const router = createBrowserRouter([
         ],
     },
     {
-        path: "/*",
+        path: "*",
         element: <Error />,
     },
 ]);

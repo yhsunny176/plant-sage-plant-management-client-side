@@ -91,7 +91,7 @@ const ResponsiveNavigation = () => {
                         </Link>
 
                         {/* Services Link */}
-                        <Link to="/add-plants" onClick={() => setIsOpen(false)} className={"nav-link-mobile"}>
+                        <Link to="/add-plant" onClick={() => setIsOpen(false)} className={"nav-link-mobile"}>
                             Add Plants
                         </Link>
 
