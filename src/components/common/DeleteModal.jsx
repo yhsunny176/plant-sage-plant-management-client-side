@@ -27,7 +27,7 @@ const DeleteModal = ({ open, onOpenChange, onConfirm, loading = false, plantName
                 <AlertDialogFooter>
                     <AlertDialogCancel className="font-bold text-xl bg-gray-400 hover:shadow-none cursor-pointer hover:bg-error-text">Cancel</AlertDialogCancel>
                     <AlertDialogAction
-                        className="bg-btn-background-danger hover:bg-btn-background-danger-hover text-base-white font-bold text-xl"
+                        className="bg-btn-background-primary hover:bg-btn-hover-bg text-base-white font-bold cursor-pointer text-xl"
                         onClick={onConfirm}
                         disabled={loading}>
                         {loading ? "Deleting..." : "Delete"}

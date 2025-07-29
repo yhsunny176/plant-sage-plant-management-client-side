@@ -29,6 +29,33 @@ const MyPlants = () => {
         setSelectedPlant(null);
     };
 
+    // State for delete loading
+    const [deleteLoading, setDeleteLoading] = useState(false);
+
+    // Handle delete confirm
+    const handleDeletePlant = async () => {
+        if (!selectedPlant?._id) return;
+        setDeleteLoading(true);
+        try {
+            const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/delete-plant/${selectedPlant._id}`, {
+                method: "DELETE",
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.message || "Failed to delete plant");
+            }
+            // Remove deleted plant from state
+            setMyPlants((prev) => prev.filter((p) => p._id !== selectedPlant._id));
+            toast.success("Plant deleted successfully!");
+            handleCloseDeleteModal();
+        } catch (err) {
+            console.error("Error deleting plant:", err);
+            toast.error(err.message || "Failed to delete plant. Please try again.");
+        } finally {
+            setDeleteLoading(false);
+        }
+    };
+
     // Fetch user's plants
     useEffect(() => {
         if (!user?.email) return;
@@ -225,8 +252,8 @@ const MyPlants = () => {
                                                         onOpenChange={(open) => {
                                                             if (!open) handleCloseDeleteModal();
                                                         }}
-                                                        onConfirm={() => {}}
-                                                        loading={false}
+                                                        onConfirm={handleDeletePlant}
+                                                        loading={deleteLoading}
                                                         plantName={selectedPlant?.plantName}
                                                     />
                                                 </div>
