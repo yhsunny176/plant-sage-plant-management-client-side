@@ -11,6 +11,7 @@ import AllPlants from "@/pages/AllPlants";
 import SinglePlant from "@/pages/SinglePlant";
 import MyPlants from "@/pages/MyPlants";
 import PrivateRouteProvider from "@/providers/PrivateRouteProvider";
+import UpdatePlant from "@/pages/UpdatePlant";
 
 const router = createBrowserRouter([
     {
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
                 path: "update-plant/:id",
                 element: (
                     <PrivateRouteProvider>
-                        <SinglePlant />
+                        <UpdatePlant/>
                     </PrivateRouteProvider>
                 ),
             },
