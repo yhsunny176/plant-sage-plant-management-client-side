@@ -85,3 +85,6 @@ Plant Sage is designed to help users keep their indoor plants healthy and organi
 
 5. **Open the app:**
    - Visit `http://localhost:5173` in your browser.
+
+6. **Server side code link of the project**
+   -Visit `https://github.com/yhsunny176/plant-sage-plant-management-server-side.git`
